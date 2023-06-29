@@ -4,15 +4,13 @@ def lines_with_word_occurrences(file_path: str, word: str):
     for index, line in enumerate(str_lines, start=1):
         if word.casefold() in line.casefold():
             result.append(index)
-        else:
-            str_lines.remove(line)
     return result
 
 
 def read_file_lines(file_path):
     with open(file_path, "r") as file:
         file_content = file.read()
-    return file_content.split()
+    return file_content.split("\n")
 
 
 def main():
@@ -27,3 +25,9 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# Problema 1: a função read_file_lines()
+# não está retornando uma lista de linhas.
+# Problema 2: a função lines_with_word_occurrences()
+# não está retornando o número da linha corretamente.
